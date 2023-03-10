@@ -15,12 +15,13 @@ window.addEventListener('DOMContentLoaded', function() {
       // collection of selected cards and apply the correct CSS class.
       if (selectedCards.length < 2) {
         card.classList.add('is-selected');
+        selectedCards.push(card) //added a push to the selected cards array
       }
 
       // If we have selected two cards, see if they match.
       if (selectedCards.length === 2) {
         var card1 = selectedCards[0];
-        var card2 = selectedCards[0];
+        var card2 = selectedCards[1]; //changed index of card2
 
         // If the cards match, add them to the collection of matched cards and
         // apply the correct CSS class.
@@ -38,7 +39,7 @@ window.addEventListener('DOMContentLoaded', function() {
       }
 
       // If we've matched all the cards, display a message.
-      if (matchedCards.length > cards.length) {
+      if (matchedCards.length === cards.length) { //changed the condition
         alert('You matched all the cards, nice job!');
       }
     });
